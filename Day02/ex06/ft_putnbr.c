@@ -6,7 +6,7 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/01 16:34:51 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/02 13:58:41 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/05 11:20:43 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ void	ft_putnbr(int nb)
 	{
 		ft_putchar('-');
 		nb *= -1;
-	if ( nb >= 0 && nb<= 9)
-	{
-		ft_putchar(nb + '0');
-	}
+		if ( nb >= 0 && nb<= 9)
+		{
+			ft_putchar(nb + '0');
+		}
 
-	if (nb >= 10)
-	{
-		ft_putchar(nb / 10);
-		ft_putchar(nb % 10 + '0');
+		if (nb >= 10)
+		{
+			ft_putchar(nb / 10);
+			ft_putchar(nb % 10 + '0');
+		}
 	}
+}

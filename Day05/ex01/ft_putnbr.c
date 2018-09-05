@@ -1,52 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 22:47:00 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/04 23:22:14 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/05 11:16:36 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/05 11:22:05 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
-{
-	int mod;
-	int i;
-	i = 2;
-	if (nb <= 1)
-	{
-		return(0);
-	}
-	while (nb > i && i <= 9)
-	{
-		mod = nb % i;
-		if (mod == 0)
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
+void	ft_putchar(void);
 
-int		ft_find_next_prime(int nb)
+void	ft_putnbr(int nb)
 {
-	int i;
-
-	i = ft_is_prime(nb);
-	while (i != 1)
+	if (nb > 0)
 	{
-		i = ft_is_prime(nb);
-		if (i == 1)
+		ft_putchar('-');
+		nb *= -1;
+		if ( nb >= 0 && nb<= 9)
 		{
-			return (nb);
+			ft_putchar(nb + '0');
 		}
-		else
+
+		if (nb >= 10)
 		{
-			nb++;
+			ft_putchar(nb / 10);
+			ft_putchar(nb % 10 + '0');
 		}
-		return (nb);
 	}
 }

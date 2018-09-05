@@ -1,52 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 22:47:00 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/04 23:22:14 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/05 17:07:36 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/05 19:10:49 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int mod;
 	int i;
-	i = 2;
-	if (nb <= 1)
+	int j;
+	int f;
+	f = 0;
+	i = 0;
+	j = 0;
+	while (src[i] != 0 && f <= n)
 	{
-		return(0);
-	}
-	while (nb > i && i <= 9)
-	{
-		mod = nb % i;
-		if (mod == 0)
-		{
-			return (0);
-		}
+		dest[j] = src[i];
+		j++;
 		i++;
+		f++;
 	}
-	return (1);
-}
-
-int		ft_find_next_prime(int nb)
-{
-	int i;
-
-	i = ft_is_prime(nb);
-	while (i != 1)
-	{
-		i = ft_is_prime(nb);
-		if (i == 1)
-		{
-			return (nb);
-		}
-		else
-		{
-			nb++;
-		}
-		return (nb);
-	}
+	return (dest);
 }

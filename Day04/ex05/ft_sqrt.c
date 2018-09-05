@@ -1,52 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 22:47:00 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/04 23:22:14 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/05 16:33:32 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/05 16:49:39 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+int 	ft_sqrt(int nb)
 {
+	int i;
+	int div;
 	int mod;
-	int i;
-	i = 2;
-	if (nb <= 1)
+	i = 1;
+
+	if (nb <= 0)
 	{
-		return(0);
+		return (0);
 	}
-	while (nb > i && i <= 9)
+	div = nb / i;
+	mod = nb % i;
+	while (i < div)
 	{
-		mod = nb % i;
-		if (mod == 0)
-		{
-			return (0);
-		}
 		i++;
+		div = nb / i;
+		mod = nb % i;
 	}
-	return (1);
-}
-
-int		ft_find_next_prime(int nb)
-{
-	int i;
-
-	i = ft_is_prime(nb);
-	while (i != 1)
+	if (div == i && mod == 0)
 	{
-		i = ft_is_prime(nb);
-		if (i == 1)
-		{
-			return (nb);
-		}
-		else
-		{
-			nb++;
-		}
-		return (nb);
+		return (i);
 	}
+	else
+	{
+		return (0);
+	}
+
 }

@@ -1,52 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 22:47:00 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/04 23:22:14 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/05 11:24:59 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/05 12:37:43 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+#include <stdio.h>
+
+char	*ft_strcpy(char *dest, char *src)
 {
-	int mod;
 	int i;
-	i = 2;
-	if (nb <= 1)
+	int j;
+	i = 0;
+	j = 0;
+	
+	while (src[i] != 0)
 	{
-		return(0);
-	}
-	while (nb > i && i <= 9)
-	{
-		mod = nb % i;
-		if (mod == 0)
-		{
-			return (0);
-		}
+		dest[j] = src[i];
+		j++;
 		i++;
 	}
-	return (1);
-}
-
-int		ft_find_next_prime(int nb)
-{
-	int i;
-
-	i = ft_is_prime(nb);
-	while (i != 1)
-	{
-		i = ft_is_prime(nb);
-		if (i == 1)
-		{
-			return (nb);
-		}
-		else
-		{
-			nb++;
-		}
-		return (nb);
-	}
+	return (dest);
 }

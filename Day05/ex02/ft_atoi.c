@@ -1,52 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 22:47:00 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/04 23:22:14 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/05 11:23:25 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/05 11:24:16 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+int		ft_atoi(char *str)
 {
-	int mod;
-	int i;
-	i = 2;
-	if (nb <= 1)
+	int	nega;
+	int	i;
+	int	soluc;
+	
+	soluc = 0;
+	i = 0;
+	nega = 1;
+	while ((str[i] >= 8 && str[i] <= 13) || str[i] == 32)
 	{
-		return(0);
-	}
-	while (nb > i && i <= 9)
-	{
-		mod = nb % i;
-		if (mod == 0)
-		{
-			return (0);
-		}
 		i++;
 	}
-	return (1);
-}
-
-int		ft_find_next_prime(int nb)
-{
-	int i;
-
-	i = ft_is_prime(nb);
-	while (i != 1)
+	if (str[i] == '+')
 	{
-		i = ft_is_prime(nb);
-		if (i == 1)
-		{
-			return (nb);
-		}
-		else
-		{
-			nb++;
-		}
-		return (nb);
+		i++;
 	}
+	if (str[i] == '-')
+	{
+		nega = nega * -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		soluc = soluc * 10;
+		soluc = soluc + (str[i] - '0');
+		i++;
+	}
+	soluc = soluc * nega;
+	return (soluc);
 }
