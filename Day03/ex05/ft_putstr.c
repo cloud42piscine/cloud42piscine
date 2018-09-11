@@ -6,16 +6,16 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 20:17:02 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/02 22:48:27 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/06 16:18:26 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
 void	ft_putstr(char *str)
 {
-	int i = 0;
-	while( str[i] != '\0')
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
 		ft_putchar(str[i]);
 		i++;

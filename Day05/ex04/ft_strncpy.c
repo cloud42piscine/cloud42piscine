@@ -6,7 +6,7 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 17:07:36 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/05 19:10:49 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/11 11:00:06 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	int i;
 	int j;
 	int f;
+
 	f = 0;
 	i = 0;
 	j = 0;

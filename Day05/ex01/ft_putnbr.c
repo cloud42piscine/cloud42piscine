@@ -6,11 +6,13 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 11:16:36 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/05 11:22:05 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/11 10:53:25 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(void);
+#include <unistd.h>
+
+void	ft_putchar(c);
 
 void	ft_putnbr(int nb)
 {
@@ -18,11 +20,10 @@ void	ft_putnbr(int nb)
 	{
 		ft_putchar('-');
 		nb *= -1;
-		if ( nb >= 0 && nb<= 9)
+		if (nb >= 0 && nb <= 9)
 		{
 			ft_putchar(nb + '0');
 		}
-
 		if (nb >= 10)
 		{
 			ft_putchar(nb / 10);

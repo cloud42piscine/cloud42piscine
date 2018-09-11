@@ -6,13 +6,11 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/01 22:37:14 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/02 17:04:58 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/06 16:12:08 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stldib.h>
-
-void ft_ultimate_ft(int *********nbr)
+void	ft_ultimate_ft(int *********nbr)
 {
-	 *********nbr = 42;
+	*********nbr = 42;
 }

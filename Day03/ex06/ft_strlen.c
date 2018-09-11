@@ -6,16 +6,18 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 22:49:17 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/03 12:36:14 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/06 16:19:53 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int i = 0;
-	while(str[i] != '\0')
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }

@@ -6,14 +6,28 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 18:08:23 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/05 23:40:36 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/10 23:12:03 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char 	*ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-	if (str = \0)
-	{
-		return (0);
-	}
+	int i;
+	int j;
 
+	i = 0;
+	if (str[0] == '\0')
+		return (0);
+	while (str[i])
+	{
+		j = 0;
+		while (str[i + j] == to_find[j])
+		{
+			if (to_find[j + 1] == '\0')
+				return (str + i);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}

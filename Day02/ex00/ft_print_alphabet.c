@@ -6,18 +6,17 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 14:06:34 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/02 15:04:31 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/10 17:57:18 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+int		ft_putchar(char c);
 
 void	ft_print_alphabet(void)
 {
 	char i;
 
 	i = 'a';
-
 	while (i <= 'z')
 	{
 		ft_putchar(i);

@@ -6,11 +6,11 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 21:38:53 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/05 16:30:44 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/06 15:37:38 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int 	ft_fibonacci(int index)
+int	ft_fibonacci(int index)
 {
 	if (index < 0)
 		return (-1);

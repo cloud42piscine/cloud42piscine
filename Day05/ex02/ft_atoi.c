@@ -6,7 +6,7 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 11:23:25 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/05 11:24:16 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/11 10:58:08 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,14 @@ int		ft_atoi(char *str)
 	int	nega;
 	int	i;
 	int	soluc;
-	
+
 	soluc = 0;
 	i = 0;
 	nega = 1;
 	while ((str[i] >= 8 && str[i] <= 13) || str[i] == 32)
-	{
 		i++;
-	}
 	if (str[i] == '+')
-	{
 		i++;
-	}
 	if (str[i] == '-')
 	{
 		nega = nega * -1;
@@ -38,6 +34,5 @@ int		ft_atoi(char *str)
 		soluc = soluc + (str[i] - '0');
 		i++;
 	}
-	soluc = soluc * nega;
-	return (soluc);
+	return (soluc * nega);
 }

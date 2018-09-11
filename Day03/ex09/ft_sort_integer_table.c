@@ -6,7 +6,7 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 20:01:52 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/03 20:12:38 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/06 16:20:46 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@ void	ft_sort_integer_table(int *tab, int size)
 	int stock;
 	int i;
 	int j;
-	j = 1;
 
+	j = 1;
 	while (j <= size)
 	{
 		i = 0;

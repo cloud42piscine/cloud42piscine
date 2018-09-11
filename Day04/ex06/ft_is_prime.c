@@ -6,18 +6,19 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 21:52:13 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/04 22:43:48 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/06 15:39:31 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+int	ft_is_prime(int nb)
 {
 	int mod;
 	int i;
+
 	i = 2;
 	if (nb <= 1)
 	{
-		return(0);
+		return (0);
 	}
 	while (nb > i && i <= 9)
 	{
@@ -30,4 +31,3 @@ int		ft_is_prime(int nb)
 	}
 	return (1);
 }
-

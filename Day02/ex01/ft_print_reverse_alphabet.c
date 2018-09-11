@@ -6,7 +6,7 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 17:29:44 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/02 15:03:42 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/10 18:23:27 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ void	ft_print_reverse_alphabet(void)
 {
 	char i;
 
-	i= 'z' ;
-
+	i = 'z';
 	while (i >= 'a')
 	{
-		ft_putchar (i);
+		ft_putchar(i);
 		i--;
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 18:54:24 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/04 20:12:22 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/10 14:33:04 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_power(int nb, int power);
+int	ft_recursive_power(int nb, int power)
 {
 	if (power < 0)
 	{
@@ -22,6 +22,6 @@ int	ft_recursive_power(int nb, int power);
 	}
 	else
 	{
-	return (nb * ft_recursive_power(nb, power -1);
+		return (nb * ft_recursive_power(nb, power - 1));
 	}
 }

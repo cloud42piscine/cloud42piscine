@@ -6,17 +6,17 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 18:54:45 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/02 15:15:15 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/10 18:45:03 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_print_numbers(void);
+void	ft_print_numbers(void)
 {
-	char	i;
+	char i;
 
-	i='0';
+	i = '0';
 	while (i <= '9')
 	{
 		ft_putchar(i);
