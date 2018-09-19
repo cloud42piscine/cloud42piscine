@@ -5,30 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 12:41:04 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/04 18:56:19 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/15 17:10:33 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/15 17:11:48 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int		ft_iterative_factorial(int nb)
 {
+	int res;
 	int i;
-	int result;
 
-	if (nb < o || nb >= 10)
+	i = 2;
+	res = 1;
+	if (nb < 0 || nb > 12)
 	{
 		return (0);
 	}
-	if (nb == 0)
-	{
-		return (1);
-	}
-	i = 1;
-	result = 1;
 	while (i <= nb)
 	{
-		result *= i;
+		res *= i;
 		i++;
 	}
-	return (result);
+	return (res);
 }

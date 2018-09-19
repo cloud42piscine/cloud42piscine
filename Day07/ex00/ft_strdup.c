@@ -1,28 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 23:14:30 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/10 23:14:58 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/12 14:27:00 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/12 20:45:57 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_strlen(char *str)
 {
-	unsigned int i;
+	int len;
 
-	i = 0;
-	if (s1[0] == '\0' && s2[0] == '\0')
-		return (0);
-	while (s1[i] == s2[i] && s1[i] && n > 0)
+	len = 0;
+	while (*str != '\0')
 	{
-		i++;
-		n--;
+		len++;
+		str++;
 	}
-	if (n == 0)
-		return (0);
-	return (s1[i] - s2[i]);
+	return (len);
+}
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[j] = src[i];
+		j++;
+		i++;
+	}
+	dest[j] = '\0';
+	return (dest);
+}
+
+char	*ft_strdup(char *src)
+{
+	char *dup;
+
+	dup = (char*)malloc(sizeof(*dup) * (ft_strlen(src) + 1));
+	dup = ft_strcpy(dup, src);
+	return (dup);
 }

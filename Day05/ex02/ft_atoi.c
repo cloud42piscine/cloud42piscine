@@ -6,33 +6,34 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 11:23:25 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/11 10:58:08 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/14 16:12:43 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(char *str)
 {
-	int	nega;
-	int	i;
-	int	soluc;
+	int cpt;
+	int resultat;
+	int signe;
 
-	soluc = 0;
-	i = 0;
-	nega = 1;
-	while ((str[i] >= 8 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+')
-		i++;
-	if (str[i] == '-')
+	resultat = 0;
+	signe = 1;
+	cpt = 0;
+	while (str[cpt] == ' ' || str[cpt] == '\t' || str[cpt] == '\v' ||
+			str[cpt] == '\r' || str[cpt] == '\f' || str[cpt] == '\n')
+		cpt++;
+	if (str[cpt] == '-')
 	{
-		nega = nega * -1;
-		i++;
+		cpt++;
+		signe = -1;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	else if (str[cpt] == '+')
+		cpt++;
+	while (str[cpt] >= '0' && str[cpt] <= '9')
 	{
-		soluc = soluc * 10;
-		soluc = soluc + (str[i] - '0');
-		i++;
+		resultat = resultat * 10;
+		resultat = resultat + (str[cpt] - 48);
+		cpt++;
 	}
-	return (soluc * nega);
+	return (resultat * signe);
 }

@@ -5,28 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 21:52:13 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/06 15:39:31 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/15 17:12:43 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/15 17:13:11 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+int		ft_is_prime(int nb)
 {
-	int mod;
 	int i;
 
 	i = 2;
 	if (nb <= 1)
-	{
 		return (0);
-	}
-	while (nb > i && i <= 9)
+	while (i < nb / 2)
 	{
-		mod = nb % i;
-		if (mod == 0)
-		{
+		if (nb % i == 0 || nb < 0)
 			return (0);
-		}
 		i++;
 	}
 	return (1);

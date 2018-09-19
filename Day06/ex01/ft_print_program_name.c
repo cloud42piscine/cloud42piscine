@@ -6,29 +6,22 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/09 15:41:01 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/11 14:46:52 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/17 19:30:58 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(c);
+#include <unistd.h>
 
-void ft_putstr(char *str)
+void	ft_putchar(char c);
+
+int		main(int argc, char **argv)
 {
-	int i;
-
-	while (*str)
+	argc = 0;
+	while (argv[0][argc])
 	{
-		ft_putchar(*str);
-		i++;
+		ft_putchar(argv[0][argc]);
+		argc++;
 	}
-}
-
-int main(int argc, char **argv)
-{
-	if (argc >= 1)
-	{
-		ft_putstr(argv[0]);
-		ft_putchar(\n);
-	}
+	ft_putchar('\n');
 	return (0);
 }

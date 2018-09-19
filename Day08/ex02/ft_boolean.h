@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 13:12:44 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/14 15:51:49 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/17 17:45:20 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/17 17:49:19 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
-{
-	int c;
-	int v;
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
+# include <unistd.h>
+# define TRUE 1
+# define FALSE 0
+# define EVEN(x) (x % 2) == 0
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define SUCCESS 1
 
-	c = 0;
-	v = 1;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (c != power)
-	{
-		c = c + 1;
-		v = v * nb;
-	}
-	return (v);
-}
+typedef int	t_bool;
+
+#endif

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 13:12:44 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/14 15:51:49 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/18 13:55:34 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/18 17:45:20 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
+int		ft_str_is_printable(char *str)
 {
-	int c;
-	int v;
+	int j;
 
-	c = 0;
-	v = 1;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (c != power)
+	j = 0;
+	while (str[j] != '\0')
 	{
-		c = c + 1;
-		v = v * nb;
+		if (str[j] >= 33 || str[j] == 127)
+		{
+			j++;
+		}
+		else
+		{
+			return (0);
+		}
 	}
-	return (v);
+	return (1);
 }

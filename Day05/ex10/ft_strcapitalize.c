@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/05 11:24:59 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/18 13:48:37 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/14 16:43:07 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/17 19:25:02 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcapitalize(char *str)
 {
-	int i;
 	int j;
 
-	i = 0;
 	j = 0;
-	while (src[i] != 0)
+	if (str[j] >= 'a' && str[j] <= 'z')
+		str[j] = str[j] - 32;
+	j++;
+	while (str[j] != '\0')
 	{
-		dest[j] = src[i];
+		if (str[j] >= 'A' && str[j] <= 'Z')
+			str[j] = str[j] + 32;
+		if (str[j - 1] == 32 || str[j - 1] == 43 || str[j - 1] == 45)
+		{
+			if (str[j] >= 'a' && str[j] <= 'z')
+				str[j] = str[j] - 32;
+			else if (str[j] >= 'A' && str[j] <= 'Z')
+			{
+				str[j] = str[j] + 32;
+			}
+		}
 		j++;
-		i++;
 	}
-	dest[j] = '\0';
-	return (dest);
+	return (str);
 }

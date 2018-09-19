@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 13:12:44 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/14 15:51:49 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/17 12:26:10 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/17 17:52:59 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
-{
-	int c;
-	int v;
+#ifndef FT_H
+# define FT_H
 
-	c = 0;
-	v = 1;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (c != power)
-	{
-		c = c + 1;
-		v = v * nb;
-	}
-	return (v);
-}
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
+
+#endif

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 13:12:44 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/14 15:51:49 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/19 13:59:27 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/19 14:00:25 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
-{
-	int c;
-	int v;
+void	ft_putchar(char c);
 
-	c = 0;
-	v = 1;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (c != power)
+void	ft_print_words_tables(char **tab)
+{
+	int	index;
+	int	i;
+
+	index = 0;
+	while (tab[index])
 	{
-		c = c + 1;
-		v = v * nb;
+		i = 0;
+		while (tab[index][i])
+		{
+			ft_putchar(tab[index][i]);
+			++i;
+		}
+		ft_putchar('\n');
+		index++;
 	}
-	return (v);
 }

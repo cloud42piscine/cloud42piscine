@@ -6,26 +6,30 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 23:52:27 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/03 15:22:52 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/11 16:06:14 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrev(char *str)
 {
-	int		i;
+	char	*res;
+	char	*beg;
+	char	*end;
 	char	stck;
 
-	while (str[i] != '\0')
+	res = str;
+	beg = str;
+	end = str;
+	while (*end != '\0')
+		end++;
+	end--;
+	while (beg < end)
 	{
-		i++;
+		stck = *beg;
+		*beg = *end;
+		*end = stck;
+		beg++;
+		end--;
 	}
-	while (j <= (i / 2))
-	{
-		stck = str[j];
-		str[j] = str[i - 1];
-		str[i - 1] = stck;
-		j++;
-		i--;
-	}
-	return (str);
+	return (res);
 }

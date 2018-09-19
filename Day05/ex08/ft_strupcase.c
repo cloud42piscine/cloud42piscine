@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/04 13:12:44 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/14 15:51:49 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/14 16:46:43 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/14 16:47:17 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
+char	*ft_strupcase(char *str)
 {
-	int c;
-	int v;
+	int i;
 
-	c = 0;
-	v = 1;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (c != power)
+	i = 0;
+	while (str[i])
 	{
-		c = c + 1;
-		v = v * nb;
+		if (str[i] >= 97 && str[i] <= 122)
+			str[i] -= 32;
+		i++;
 	}
-	return (v);
+	return (str);
 }

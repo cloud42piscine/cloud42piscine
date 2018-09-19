@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 23:16:50 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/10 23:17:13 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/17 13:37:08 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/17 13:38:07 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (str[i])
+	if (s1[0] == '\0' && s2[0] == '\0')
+		return (0);
+	while (s1[i] == s2[i] && s1[i] && n > 0)
 	{
-		if (str[i] >= 65 && str[i] <= 90)
-		{
-			str[i] += 32;
-		}
 		i++;
+		n--;
 	}
-	return (str);
+	if (n == 0)
+		return (0);
+	return (s1[i] - s2[i]);
 }
