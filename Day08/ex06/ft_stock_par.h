@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_stock_par.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 16:40:29 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/19 23:41:40 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/20 22:09:03 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/20 22:15:00 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#ifndef FT_STOCK_PAR_H
+# define FT_STOCK_PAR_H
 
-typedef struct	s_point
+typedef struct	s_stock_par
 {
-	int		x;
-	int		y;
-}				t_point;
+	int			size_param;
+	char		*str;
+	char		*copy;
+	char		**tab;
+}				t_stock_par;
 
-void			set_point(t_point *point);
 #endif

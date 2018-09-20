@@ -6,19 +6,21 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 11:36:32 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/18 11:58:32 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/20 22:03:50 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putchar(char c);
 
-void	ft_swap(char *a, char *b)
+void	ft_swap(char **s1, char **s2)
 {
-	char c;
+	char *c;
 
-	c = *a;
-	*a = *b;
-	*b = c;
+	c = *s1;
+	*s1 = *s2;
+	*s2 = c;
 }
 
 int		ft_strcmp(char *s1, char *s2)
@@ -40,35 +42,43 @@ int		ft_strcmp(char *s1, char *s2)
 void	ft_putstr(char *str)
 {
 	while (*str)
+		ft_putchar(*str++);
+}
+
+void	display(int ac, char **av)
+{
+	int i;
+
+	i = 1;
+	while (i < ac)
 	{
-		ft_putchar(*str);
-		str++;
+		ft_putstr(av[i]);
+		ft_putchar('\n');
+		i++;
 	}
 }
 
 int		main(int argc, char **argv)
 {
 	int i;
+	int check;
 
 	i = 1;
-	while (i < argc - 1)
+	check = 1;
+	while (check != 0)
 	{
-		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+		check = 0;
+		while (i < argc - 1)
 		{
-			ft_swap(argv[i], argv[i + 1]);
-			i = 1;
-		}
-		else
-		{
+			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+			{
+				ft_swap(&argv[i], &argv[i + 1]);
+				check = 1;
+			}
 			i++;
 		}
 	}
 	i = 1;
-	while (i < argc)
-	{
-		ft_putstr(argv[i]);
-		ft_putchar('\n');
-		i++;
-	}
+	display(argc, argv);
 	return (0);
 }

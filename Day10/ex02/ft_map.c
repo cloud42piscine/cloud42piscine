@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 16:40:29 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/19 23:41:40 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/20 16:00:03 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/20 16:00:05 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#include <stdlib.h>
 
-typedef struct	s_point
+int		*ft_map(int *tab, int length, int (*f)(int))
 {
-	int		x;
-	int		y;
-}				t_point;
+	int *dest;
+	int i;
 
-void			set_point(t_point *point);
-#endif
+	if (!(dest = (int*)malloc(sizeof(int) * (length - 1))))
+		return (0);
+	i = 0;
+	while (i < length)
+	{
+		dest[i] = f(tab[i]);
+		i++;
+	}
+	return (dest);
+}

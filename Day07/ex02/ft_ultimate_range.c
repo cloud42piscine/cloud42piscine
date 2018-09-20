@@ -6,7 +6,7 @@
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 20:31:01 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/16 15:58:08 by dgunes           ###   ########.fr       */
+/*   Updated: 2018/09/19 18:07:30 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,21 @@
 
 int		ft_ultimate_range(int **range, int min, int max)
 {
-	int i;
-	int taille;
+	int		i;
 
-	taille = max - min;
 	if (min >= max)
 	{
+		*range = 0;
 		return (0);
 	}
-	*range = (int *)malloc(sizeof(int) * taille);
-	if (*range == 0)
-	{
+	if (!(*range = (int*)malloc(sizeof(int) * (max - min))))
 		return (0);
-	}
 	i = 0;
 	while (min < max)
 	{
-		range[0][i] = min;
-		min++;
-		i++;
-		printf("%d", range[0][i]);
+		(*range)[i] = min;
+		min += 1;
+		i += 1;
 	}
-	return (taille);
+	return (i);
 }

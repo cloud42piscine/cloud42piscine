@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 16:40:29 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/19 23:41:40 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/20 15:59:41 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/20 15:59:44 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
-
-typedef struct	s_point
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int		x;
-	int		y;
-}				t_point;
+	int i;
 
-void			set_point(t_point *point);
-#endif
+	i = 0;
+	while (i < length)
+	{
+		f(tab[i]);
+		i++;
+	}
+}

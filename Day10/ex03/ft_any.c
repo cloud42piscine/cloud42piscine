@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgunes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 16:40:29 by dgunes            #+#    #+#             */
-/*   Updated: 2018/09/19 23:41:40 by dgunes           ###   ########.fr       */
+/*   Created: 2018/09/20 16:00:29 by dgunes            #+#    #+#             */
+/*   Updated: 2018/09/20 16:00:33 by dgunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
-
-typedef struct	s_point
+int		ft_any(char **tab, int (*f)(char*))
 {
-	int		x;
-	int		y;
-}				t_point;
+	int i;
 
-void			set_point(t_point *point);
-#endif
+	i = 0;
+	while (tab[i])
+	{
+		if (f(tab[i]) == 1)
+			return (1);
+		i++;
+	}
+	return (0);
+}
